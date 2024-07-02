@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<!--
+By JayCode
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+i {
+	margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+.navbar-logo{
+	padding: 15px;
+	color: #850bb5;
+}
+.navbar-mainbg{
+	background-color: #054fd8;
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+	margin-right: 10px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: rgb(247, 241, 241);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 10px 10px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #5161ce;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #fff;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+	bottom: 10px;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5161ce;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+
+@media(min-width: 992px){
+	.navbar-expand-custom {
+	    -ms-flex-flow: row nowrap;
+	    flex-flow: row nowrap;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	}
+	.navbar-expand-custom .navbar-nav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	.navbar-expand-custom .navbar-toggler {
+	    display: none;
+	}
+	.navbar-expand-custom .navbar-collapse {
+	    display: -ms-flexbox!important;
+	    display: flex!important;
+	    -ms-flex-preferred-size: auto;
+	    flex-basis: auto;
+	}
+}
+
+
+@media (max-width: 991px){
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+	}
+}
+</style>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href=""></a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+                <a class="nav-link" href="mailto:kallonbundujr99@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>kallonbundujr99@gmail.com</a>
+            </li>
+      
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="tel:23288075111"><i class="fa fa-phone-square" aria-hidden="true"></i>Tel:+23288075111</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://github.com/"><i class="fa fa-github" aria-hidden="true"></i>Git</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/bundu-kallon-117464241/"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkIn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://www.facebook.com/profile.php?id=100077586098397"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.instagram.com/bundukallon/"><i class="fa fa-instagram" aria-hidden="true"></i></i>Instagram</a>
+        </li>
+              <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://www.tiktok.com/@jaycode_cybermentor?_t=8k4PlLZMlfx&_r=1"><i class="fa-brands fa-tiktok"></i>Tiktok</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href=""><i class="fa fa-registered" aria-hidden="true"></i></i>Register Now !</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://www.youtube.com/channel/UC5IVa4x7_N3Jwtl71Um83gg"><i class="fa fa-youtube-play" aria-hidden="true"></i></i>Youtube</a>
+      </li>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" href="cv.html"><i class="fa fa-user" aria-hidden="true"></i></i>CV</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" target="_blank" href="https://wa.me/23288075111?text=Hello%20JayCode%20(CyberMentor)%20I%20Came%20from%20your%20site"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a>
+</li>
+          </li>
+        </ul>
+    </div>
+    <script>
+      
+    </script>
+</nav>
+<body>
+    
+</body>
+</html>
+
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JayCode (cybermentor)</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+
+		<link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/jpeg" href="img/1.jpg"/>
+
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZXJBVDf7R4JqmSpopVPoduIGWx1IwpBM"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+
+    
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	</head>
+	<body>
+	<div class="svg-wrap">
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <path id="arrow-left" d="M26.667 10.667q1.104 0 1.885 0.781t0.781 1.885q0 1.125-0.792 1.896l-14.104 14.104h41.563q1.104 0 1.885 0.781t0.781 1.885-0.781 1.885-1.885 0.781h-41.563l14.104 14.104q0.792 0.771 0.792 1.896 0 1.104-0.781 1.885t-1.885 0.781q-1.125 0-1.896-0.771l-18.667-18.667q-0.771-0.813-0.771-1.896t0.771-1.896l18.667-18.667q0.792-0.771 1.896-0.771z"></path>
+      </svg>
+
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <path id="arrow-right" d="M37.333 10.667q1.125 0 1.896 0.771l18.667 18.667q0.771 0.771 0.771 1.896t-0.771 1.896l-18.667 18.667q-0.771 0.771-1.896 0.771-1.146 0-1.906-0.76t-0.76-1.906q0-1.125 0.771-1.896l14.125-14.104h-41.563q-1.104 0-1.885-0.781t-0.781-1.885 0.781-1.885 1.885-0.781h41.563l-14.125-14.104q-0.771-0.771-0.771-1.896 0-1.146 0.76-1.906t1.906-0.76z"></path>
+      </svg>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+   <div class="container-fluid">
+
+    <!-- HEADER -->
+
+    <section id="header">
+
+      <!-- NAVIGATION -->
+      <nav class="navbar navbar-fixed-top navbar-default bottom">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+              <span class="sr-only">JayCode</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+<style>
+  #logo {
+    display: inline-block;
+    margin: 15px; 
+    float: left;
+    height: 60px;
+    width: auto; 
+    
+  }
+
+</style>
+            <a href="#"><img id="logo" src="1.jpg"></a>
+              <nav>
+            <a href="#" id="menu-icon"></a>
+            <a class="navbar-brand" href="#header">JayCode (CyberMentor).</a>
+            
+          </div><!-- /.navbar-header -->
+          
+
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about">Hire Me</a></li>              
+              <li><a href="#portfolio">Service</a></li>
+			  <li><a href="#team">Team</a></li>
+			  <li><a href="#info">Level</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div> <!-- /.navbar-collapse -->
+        </div> <!-- /.container -->
+      </nav>
+
+      <!-- SLIDER -->
+      <div class="header-slide">
+        <section>
+          <div id="loader" class="pageload-overlay" data-opening="M 0,0 0,60 80,60 80,0 z M 80,0 40,30 0,60 40,30 z">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+              <path d="M 0,0 0,60 80,60 80,0 Z M 80,0 80,60 0,60 0,0 Z"/>
+            </svg>
+          </div> <!-- /.pageload-overlay -->
+          
+          <div class="image-slide bg-fixed">
+            <div class="overlay">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+
+                    <div class="slider-content">
+                      <h1></h1>
+                      <p>Power of Technology....</p>
+                    </div>
+
+                  </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+              </div> <!-- /.container -->
+            </div> <!-- /.overlay -->
+          </div> <!-- /.image-slide -->
+
+          <nav class="nav-slide">
+            <a class="prev" href="#prev">
+              <span class="icon-wrap">
+                <svg class="icon" width="32" height="32" viewBox="0 0 64 64">
+                  <use xlink:href="#arrow-left">
+                </svg>
+              </span>
+              <div>
+                <span>JayCode</span>
+                <h3>...</h3>
+                <p>...</p>
+                <img alt="Previous thumb">
+              </div>
+            </a>
+            <a class="next" href="#next">
+              <span class="icon-wrap">
+                <svg class="icon" width="32" height="32" viewBox="0 0 64 64">
+                  <use xlink:href="#arrow-right">
+                </svg>
+              </span>
+              <div>
+                <span>JayCode</span>
+                <h3>...</h3>
+                <p>...</p>
+                <img alt="Next thumb">
+              </div>
+            </a>
+          </nav>
+        </section>
+
+        <script type="text/javascript">
+        var dataHeader = [
+                            {
+                              bigImage :"img/slider1.jpg",
+                              title : "JayCode (CyberMentor)",
+							  author : "JayCode"
+                            },
+                            {
+                              bigImage :"img/header1.jpg",
+                              title : "JayCode (CyberMentor)",
+                              author : "JayCode"
+                            },
+                            {
+                              bigImage :"img/header1.jpg",
+                              title : "JayCode (CyberMentor)",
+                              author : "JayCode"
+                            }
+                        ],
+            loaderSVG = new SVGLoader(document.getElementById('loader'), {speedIn : 600, speedOut : 600, easingIn : mina.easeinout});
+            loaderSVG.show()
+        </script>
+
+      </div><!-- /.header-slide -->
+    </section>
+
+    <!-- HEADER END -->
+    <!-- ABOUT -->
+
+    <section id="about" class="light">
+      <header class="title">
+        <h2> HIRE, <a href="profile.html" target="_blank">ME</a><span></span> </h2>
+        <p>Are you seeking a dedicated and proficient programmer to drive innovation and excellence within your organization? Look no further! With a proven track record of delivering high-quality software solutions and a passion for tackling complex technical challenges, I am confident in my ability to make a significant contribution to your team.</strong> </p>
+      </header>
+
+      <div class="container">
+        <div class="row table-row">
+          <div class="col-sm-6 hidden-xs">
+            <div class="section-content">
+              <div class="big-image" style="background-image:url(profile.jpg)"  ></div>
+            </div>
+            
+          </div>
+
+          <div class="col-sm-6">
+            <div class="section-content">
+              <div class="about-content left animated" data-animate="fadeInLeft">
+                <div class="about-icon"><i class="fa fa-code"></i></div>
+                <div class="about-detail">
+                  <h4>Extensive Expertise</h4>
+                  <p> With years of experience in [programming languages/frameworks/tools], I bring a wealth of technical knowledge and expertise to the table. Whether it's developing scalable web applications, crafting efficient algorithms, or troubleshooting intricate bugs, I have the skills to deliver results effectively.
+                   </p>
+                </div>
+              </div>
+
+              <div class="about-content left animated" data-animate="fadeInLeft">
+                <div class="about-icon"><i class="fa fa-desktop"></i></div>
+                <div class="about-detail">
+                  <h4>Strong Problem-Solving Skills</h4>
+                  <p>I thrive on solving problems and implementing creative solutions. My analytical mindset and attention to detail allow me to dissect complex issues and devise robust solutions that meet both technical requirements and business objectives.
+
+                </div>
+              </div>
+
+              <div class="about-content left animated" data-animate="fadeInLeft">
+                <div class="about-icon"><i class="fa fa-cube"></i></div>
+                <div class="about-detail">
+                  <h4>Collaborative Team Player</h4>
+                  <p> I excel in collaborative environments and enjoy working closely with cross-functional teams to achieve common goals. I am adept at communicating technical concepts to non-technical stakeholders and fostering positive working relationships that drive project success.</p>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /.row table-row -->
+      </div> <!-- /.container -->
+    </section>
+	
+	
+	    <!-- PORTFOLIO -->
+
+    <section id="portfolio" class="light"> 
+      <header class="title">
+        <h2>SERVICE DELIVERY PROGRAMS</h2>
+      
+        <li>
+          Custom Software Development
+        </li>
+        <li>
+          Web Development: 
+        </li>
+        <li>
+          Mobile App Development:
+        </li>
+        <li>
+          Desktop Application Development
+        </li>
+        <li>
+          Database Development and Management:
+        </li>
+        <li>
+          API Development and Integration
+        </li>
+        <li>
+          Quality Assurance and Testing
+        </li>
+     
+        <br>
+      </header>
+
+      <div class="container-fluid">
+        <div class="row">
+          <ul id="filters" class="list-inline">
+            <li data-filter="all" class="filter">All</li>
+            <li data-filter=".branding" class="filter">Python </li> 
+            <li data-filter=".graphic" class="filter">Java </li> 
+            <li data-filter=".printing" class="filter">OTHERS</li> 
+            <li data-filter=".video" class="filter">Video</li> 
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="container-portfolio">
+            <!-- PORTFOLIO OBJECT -->
+            <script type="text/javascript">
+            var portfolio = [
+                    {
+                      category : "branding",
+                      image : "img/python.jpg",
+                      title : "Python <br><span>Django</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)"
+                    },
+                    {
+                      category : "branding",
+                      image : "img/py.jpg",
+                      title : "Java <br> <span> Script</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)"
+                    },
+                    {
+                      category : "graphic",
+                      image : "img/header1.jpg",
+                      title : "HTML<br><span> CSS</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)."
+                    },
+                    {
+                      category : "graphic",
+                      image : "img/database.jpg",
+                      title : "SQL<br><span>Database</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)"
+                    },
+                    {
+                      category : "video",
+                      image : "img/header1.jpg",
+                      title : "Note<br> <span>JS</span>",
+                      link : "none",
+                      text : "JayCode (CyberMentor)."
+                    },
+                    {
+                      category : "branding",
+                      image : "img/flutter.jpg",
+                      title : "Dart <br><span>Flutter</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)"
+      
+                    },
+                    {
+                      category : "printing",
+                      image : "img/slider1.jpg",
+                      title : "C++ <br> <span>C#</span>",
+                      link : "#none",
+                      text : "JayCode (CyberMentor)."
+                    },
+                    {
+                      category : "printing",
+                      image : "img/html.jpg",
+                      title : "HTML<br> <span>CSS</span>",
+                      link : "", 
+                      text : "JayCode (CyberMentor)" 
+                  
+                    },
+                ];
+            </script>
+          </div>
+        </div>
+      </div>
+    </section><br><br>
+
+
+
+    <!-- TEAM -->
+
+    <section id="team" class="light">
+      <header class="title">
+   
+        <br><br>
+        <h2>Creative <span>Team</span></h2>
+        <p>The creative team involved in the development of an IT project can vary depending on the scope and nature of the project. Additionally, in smaller teams, individuals may wear multiple hats and take on multiple responsibilities. </b></p>
+      </header>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 text-center">
+            <div class="wrap animated" data-animate="fadeInDown">
+              <div class="img-team">
+                <img src="img/KALLON.PNG" alt="" class="img-circle">
+              </div>
+              <div class="btn btn-sm btn-success mycustom_btn" 
+              target="_blank" onclick="document.location='profile.html'"  data-target="_blank">Read More</button>
+               </div>
+              
+              <h3>Bundu Kallon</h3>
+      
+              <h5> </h5><h5>JayCode</h5>
+
+              <p> I'm a programmer, passionate about crafting elegant solutions to complex problems through the power of coding. With a knack for turning ideas into reality, I thrive in the world of software development, where every line of code is a building block in creating something impactful.</p>
+
+              <div class="team-social">
+                <ul class="list-inline social-list">
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="" class="fa fa-facebook"></a></li>
+                  <li><a href="" class="fa fa-google-plus"></a></li>
+                </ul> 
+              </div>                
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <div class="wrap animated" data-animate="fadeInDown"> 
+              <div class="img-team">
+                <img src="img\pythonn.jpg" alt="" class="img-circle">
+              </div>
+
+              <div class="btn btn-sm btn-success mycustom_btn" 
+              target="_blank" onclick="document.location='index.html'"  data-target="_blank">Read More</button>
+               </div>
+              
+              <h3>Python </h3>
+              <h5>Course</h5>
+
+              <p>Sure, what would you like to know about Python programming? Python is a high-level programming language known for its simplicity and readability. It's widely used in various fields such as web development, data science, artificial intelligence, scientific computing, and more. If you have any specific questions or topics you'd like to explore, feel free to ask!.</p>
+
+              <div class="team-social">
+                <ul class="list-inline social-list">
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="https://www.facebook.com/kabia.adikalie" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                </ul> 
+              </div>                
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <div class="wrap animated" data-animate="fadeInDown"> 
+              <div class="img-team">
+                <img src="img\Java.png" alt="" class="img-circle">
+              </div>
+
+             <div class="btn btn-sm btn-success mycustom_btn" 
+              target="_blank" onclick="document.location='index.html'"  data-target="_blank">Read More</button>
+               </div>
+              
+              <h3>Java</h3>
+              <h5>Course</h5>
+
+              <p>
+                Of course! Java is another popular programming language, particularly known for its platform independence, robustness, and wide range of applications. Here are some key points about Java programming: Platform Independence, Syntax, Memory Management, Rich Standard Library, Strong Community Support and  Application Areas.</p>
+
+              <div class="team-social">
+                <ul class="list-inline social-list">
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                </ul> 
+              </div>                
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <div class="wrap animated" data-animate="fadeInDown"> 
+              <div class="img-team">
+                <img src="img\OIP.jpg" alt="" class="img-circle">
+              </div>
+
+              <div class="btn btn-sm btn-success mycustom_btn" 
+              target="_blank" onclick="document.location='index.html'"  data-target="_blank">Read More</button>
+               </div>
+              
+              <h3>HTML/CSS/JS</h3>
+              <h5>courses to Learn</h5>
+ 
+              <p>
+                Certainly! HTML, CSS, and JavaScript are three fundamental technologies used for building web pages and web applications. Together, HTML, CSS, and JavaScript form the foundation of modern web development. They are often used in conjunction with various libraries, frameworks, and tools to create rich, responsive, and interactive web applications.</p>
+
+              <div class="team-social">
+                <ul class="list-inline social-list">
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                </ul> 
+              </div>                
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.container -->
+    </section>
+	    <!-- INFO -->
+
+    <section id="info" class="dark">
+      <header class="title">
+        <h2>Our <span>Experties</span></h2>
+        <p>This list is by no means exhaustive, as there are numerous programming languages available, each with its own strengths and applications. Additionally, new languages and variations emerge over time, reflecting the evolving needs and preferences of developers and industries..</p>
+      </header>
+
+      <div class="container experties">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="skill">
+              <ul class="skill-bar list-unstyled">
+                <li><span class="percentage" data-value="50%"></span><em>HTML/CSS</em></li>
+                <li><span class="percentage" data-value="50%"></span><em>JavaScript</em></li>
+                <li><span class="percentage" data-value="70%"></span><em>Django (Python)</em></li>
+                <li><span class="percentage" data-value="69%"></span><em>Node.js</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill">
+              <ul class="skill-bar list-unstyled">
+                <li><span class="percentage" data-value="63%"></span><em>Java</em></li>
+                <li><span class="percentage" data-value="80%"></span><em>C++/C#</em></li>
+                <li><span class="percentage" data-value="43%"></span><em>SQL /PHP</em></li>
+                <li><span class="percentage" data-value="66%"></span><em>Dart (Flutter)</em></li>
+              </ul>
+            
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.container -->
+    </section>	
+	
+
+    <section class="separator blue">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="counter animated" data-animate="fadeInUp" data-delay="0">
+              <div class="counter-icon">
+                <i class="fa fa-group"></i>
+              </div>
+              <div class="counter-content">
+                <span class="value" data-from="0" data-to="5"></span>
+                <small>Clients</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="counter animated" data-animate="fadeInUp" data-delay="0">
+              <div class="counter-icon">
+                <i class="fa fa-leaf"></i>
+              </div>
+              <div class="counter-content">
+                <span class="value" data-from="0" data-to="20"></span>
+                <small>Awards</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="counter animated" data-animate="fadeInUp" data-delay="10">
+              <div class="counter-icon">
+                <i class="fa fa-gears"></i>
+              </div>
+              <div class="counter-content">
+                <span class="value" data-from="0" data-to="20"></span>
+                <small>Projects</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="counter animated" data-animate="fadeInUp" data-delay="1500">
+              <div class="counter-icon">
+                <i class="fa fa-inbox"></i>
+              </div>
+              <div class="counter-content">
+                <span class="value" data-from="0" data-to="20"></span>
+                <small>Mail</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER CONTACT -->
+
+     <section id="contact" class="dark">
+      <header class="title">
+        <h2>Contact <span>Me</span></h2>
+        <p>JayCode
+          
+
+          .</p>
+         
+      </header>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 animated" data-animate="fadeInLeft">
+            <form action="#">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" rows="3" placeholder="Tell Us Everything"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-default submit"><a href="mailto:jaycode@gmail.com">Send Message</span></a></button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-4 animated" data-animate="fadeInRight">
+            <address>
+                <span><i class="fa fa-map-marker fa-lg"></i><a href="https://www.google.com/maps/place/Ivan+Drive/@8.4153432,-13.1653127,15z/data=!4m6!3m5!1s0xf04e72dcce9d76f:0x44832e3c0047e496!8m2!3d8.4153115!4d-13.1549807!16s%2Fg%2F11nnlcd4bv?entry=ttu"> 50 Ivan Drive Allentown, Freetown, Sierra Leone</a></span>
+                <span><i class="fa fa-phone fa-lg"></i> <a href="tel:23288075111">Tel:+23288075111 </a></span>
+                <span><i class="fa fa-envelope-o fa-lg"></i> <a href="mailto:jaycode@gmail.com">jaycode&#64;gmail.com</a></span>
+                <span><i class="fa fa-globe fa-lg"  target="_blank"></i> <a href="https://www.facebook.com/profile.php?id=100077586098397" >support.facebook.com</a></span>
+            </address>
+          </div>
+		  
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>CREATED BY <i class="fa fa-what"></i> <a href="">Bundu Kallon Junior</a></p>
+            <p><small>JayCode (CyberMentor)</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   </div><!-- /.container-fluid -->
+
+    <!-- SCRIPT -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+        // ---------Responsive-navbar-active-animation-----------
+function test(){
+	var tabsNewAnim = $('#navbarSupportedContent');
+	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+	var itemPosNewAnimTop = activeItemNewAnim.position();
+	var itemPosNewAnimLeft = activeItemNewAnim.position();
+	$(".hori-selector").css({
+		"top":itemPosNewAnimTop.top + "px", 
+		"left":itemPosNewAnimLeft.left + "px",
+		"height": activeWidthNewAnimHeight + "px",
+		"width": activeWidthNewAnimWidth + "px"
+	});
+	$("#navbarSupportedContent").on("click","li",function(e){
+		$('#navbarSupportedContent ul li').removeClass("active");
+		$(this).addClass('active');
+		var activeWidthNewAnimHeight = $(this).innerHeight();
+		var activeWidthNewAnimWidth = $(this).innerWidth();
+		var itemPosNewAnimTop = $(this).position();
+		var itemPosNewAnimLeft = $(this).position();
+		$(".hori-selector").css({
+			"top":itemPosNewAnimTop.top + "px", 
+			"left":itemPosNewAnimLeft.left + "px",
+			"height": activeWidthNewAnimHeight + "px",
+			"width": activeWidthNewAnimWidth + "px"
+		});
+	});
+}
+$(document).ready(function(){
+	setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+	setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
+
+
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+	// Get current path and find target link
+	var path = window.location.pathname.split("/").pop();
+
+	// Account for home page with empty path
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+	// Add active class to target link
+	target.parent().addClass('active');
+});
+
+
+
+
+// Add active class on another page linked
+// ==========================================
+$(window).on('load',function () {
+    var current = location.pathname;
+    console.log(current);
+   $('#navbarSupportedContent ul li a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+           $this.parent().addClass('active');
+            $this.parents('.menu-submenu').addClass('show-dropdown');
+           $this.parents('.menu-submenu').parent().addClass('active');
+       }else{
+           $this.parent().removeClass('active');
+       }
+     })
+ });
+    </script>
+	</body>
+</html>
+
